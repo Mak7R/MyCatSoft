@@ -1,0 +1,307 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: white;
+}
+
+header {
+    display: flex;
+    z-index: 2;
+    height: 100px;
+}
+
+header #logo{
+    width: 80px;
+    border-radius: 50%;
+    border: black 2px solid;
+    margin: 10px;
+}
+
+header h1{
+    font-size: 36px;
+    font-style: italic;
+    margin-top: 30px;
+}
+
+@media (max-width: 910px){
+    header h1 .hidden{
+        visibility: hidden;
+    }
+}
+
+
+header button{
+    border-radius: 50%;
+    font-size: 18px;
+    background-color: black;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    border: black 2px solid;
+    color: white;
+    transition: background-color 0.8s ease, color 0.8s ease;
+    cursor: pointer;
+}
+
+header button:hover{
+    color: black;
+    background-color: white;
+}
+
+
+#main-nav, 
+#main-nav *{
+    background-color: black;
+}
+
+@media (max-width: 768px) {
+    #main-nav{
+        visibility: hidden;
+        z-index: 0;
+        position: absolute;
+    }
+    header button{
+        visibility: hidden;
+    }
+    .menu:hover{
+        color: black;
+        background-color: white;
+    }
+    .menu{
+        z-index: 1;
+        visibility: visible;
+        cursor: pointer;
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        right: 15px;
+        top: 15px;
+        background-color: black;
+        line-height: 50px;
+        color: white;
+        text-align: center;
+        font-size: 18px;
+        line-height: 70px;
+        border-radius: 50%;
+        border: black 2px solid;
+        transition: background-color 0.8s ease, color 0.8s ease;
+      }
+  
+      .menu-items {
+        display: flex;
+        flex-direction: column;
+        visibility: hidden;
+        margin-left: -2px;
+      }
+  
+      .menu-item{
+        width: 70px;
+        height: 70px;
+        background-color: black;
+        line-height: 50px;
+        color: white;
+        text-align: center;
+        font-size: 15px;
+        line-height: 70px;
+        border-radius: 50%;
+        border: black 2px solid;
+        margin-top: 2px;
+      }
+
+      .menu-item:hover{
+        background-color: white;
+        color: black;
+        transition: background-color 0.8s ease, color 0.8s ease;
+      }
+  
+      .menu:hover .menu-items{
+        visibility: visible;
+      }
+}
+
+@media (min-width: 768px) {
+    #main-nav{
+        visibility: visible;
+        z-index: 1;
+        position: sticky;
+    }
+    header button{
+        visibility: visible;
+    }
+    .menu{
+        visibility: hidden;
+    }
+}
+
+
+
+#main-nav{
+    top: 0;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-nav a{
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: font-size 0.6s;
+}
+
+#main-nav a:hover {
+    font-size: 26px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 30px 20px;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 960px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+@media (min-width: 960px) and (max-width: 1200px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    border: rgb(83, 83, 83) 2px solid;
+    background-color: azure;
+    box-shadow: 0 0 5px rgb(110, 194, 180);
+    transition: border-color 0.1s ease-in-out;
+    transition: box-shadow 0.1s ease-in-out;
+}
+
+.item:hover{
+    box-shadow: 0 0 30px rgb(71, 255, 224);
+    border-color: black;
+}
+  
+.item .logo{
+    width: 100%;
+}
+
+.item .header{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.item .about{
+    font-size: 18px;
+}
+
+.item .price .old{
+    color: rgb(112, 112, 112);
+    text-decoration: line-through;
+}
+
+.item .price .new{
+    color: red;
+}
+
+.item .install{
+    margin-top: auto;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    background-color: aquamarine;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#fourth::before,
+#first::before{
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 14px;
+    width: 60px;
+    line-height: 60px;
+    height: 60px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+}
+
+#first::before{
+    content: "Discount";
+}
+
+#fourth::before{
+    content: "Free";
+}
+
+footer{
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    height: 150px;
+
+    display: flex;
+    justify-content: center;
+    
+}
+
+footer .footer-block{
+    font-size: 18px;
+    color: rgb(116, 116, 116);
+    margin: 20px 0px;
+    text-align: center;
+    width: 160px;
+    height: 40px;
+}
+
+footer .footer-block .footer-item a{
+    text-decoration: none;
+    color: white;
+    transition: font-size 0.6s;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+footer .footer-block .footer-item a:hover{
+    font-size: 18px;
+}
